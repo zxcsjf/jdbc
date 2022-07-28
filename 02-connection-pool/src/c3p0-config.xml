@@ -1,0 +1,29 @@
+<c3p0-config>
+    <default-config>
+
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <!-- 在xml中，特殊字符要写其对应的转义字符-->
+        <!--
+                    转义字符
+            &       &amp;
+            >       &gt; (greater than)
+            <       &lt; (less than)
+        -->
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/43th?useSSL=false&amp;characterEncoding=utf8</property>
+        <property name="user">root</property>
+        <property name="password">123456</property>
+
+    </default-config>
+
+    <!-- 必须配置在src目录下 -->
+    <!-- This app is massive! -->
+    <named-config name="43th">
+
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/43th?useSSL=false&amp;characterEncoding=utf8</property>
+        <property name="user">root</property>
+        <property name="password">123456</property>
+    </named-config>
+
+
+</c3p0-config>

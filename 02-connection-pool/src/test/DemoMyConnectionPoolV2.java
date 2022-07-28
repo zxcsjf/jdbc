@@ -1,6 +1,6 @@
-package jdbc;
+package test;
 
-import connectionpool.MyConnectionPoolV1;
+import connectionpool.myconnectionpool.MyConnectionPoolV2;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -8,15 +8,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * 使用V1自己写的数据库连接池，操作数据库
+ * 使用V2
+ * 自己写的数据库连接池，操作数据库
  * @author zxcsjf
  * @since 2022/07/28 19:37
  */
-public class DemoMyConnectionPoolV1 {
+public class DemoMyConnectionPoolV2 {
     public static void main(String[] args) throws SQLException {
 
         // 1.获取连接
-        Connection connection = MyConnectionPoolV1.getConnection();
+        Connection connection = MyConnectionPoolV2.getConnection();
 
         // 2.创建statement对象
         Statement statement = connection.createStatement();
@@ -38,6 +39,6 @@ public class DemoMyConnectionPoolV1 {
         statement.close();
 
         // 6.返回链接到连接池
-        MyConnectionPoolV1.recycleConnection(connection);
+        MyConnectionPoolV2.recycleConnection(connection);
     }
 }

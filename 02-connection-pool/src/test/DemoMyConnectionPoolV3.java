@@ -1,6 +1,6 @@
-package jdbc;
+package test;
 
-import connectionpool.MyConnectionPoolV3;
+import connectionpool.myconnectionpool.MyConnectionPoolV3;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

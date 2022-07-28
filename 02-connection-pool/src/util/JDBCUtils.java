@@ -27,7 +27,7 @@ public class JDBCUtils {
         try {
             // 读取配置文件
             Properties properties = new Properties();
-            properties.load(new FileInputStream("jdbc.properties"));
+            properties.load(new FileInputStream("test.properties"));
 
             url = properties.getProperty("url");
             username = properties.getProperty("user");

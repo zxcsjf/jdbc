@@ -7,6 +7,8 @@
     <SOURCES>
       <root url="jar://$USER_HOME$/.ideaLibSources/commons-dbutils-1.7-sources.jar!/" />
       <root url="jar://$USER_HOME$/.ideaLibSources/c3p0-0.9.5.5-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/mysql-connector-java-5.1.48-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/commons-dbcp-1.4-sources.jar!/" />
     </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/02-connection-pool/lib" recursive="false" />
   </library>

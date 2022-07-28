@@ -1,6 +1,6 @@
-package jdbc;
+package test;
 
-import connectionpool.MyConnectionPoolV2;
+import connectionpool.opensourcedbcp.C3p0Utils;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -8,21 +8,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * 使用V2
- * 自己写的数据库连接池，操作数据库
  * @author zxcsjf
- * @since 2022/07/28 19:37
+ * @since 2022/07/28 22:02
  */
-public class DemoMyConnectionPoolV2 {
+public class DemoC3p0Utils {
     public static void main(String[] args) throws SQLException {
 
         // 1.获取连接
-        Connection connection = MyConnectionPoolV2.getConnection();
+        Connection connection = C3p0Utils.getConnection();
 
         // 2.创建statement对象
         Statement statement = connection.createStatement();
 
-        // 3.发送sql语句,获得结果集
+        // 3.发送sql语句
         ResultSet resultSet = statement.executeQuery("select * from account");
 
         // 4.解析结果集
@@ -34,11 +32,12 @@ public class DemoMyConnectionPoolV2 {
         }
 
         // 5.关闭资源
-        // JDBCUtils.closeResources(statement, connection, resultSet);
         resultSet.close();
         statement.close();
 
         // 6.返回链接到连接池
-        MyConnectionPoolV2.recycleConnection(connection);
+        //      在第三方开源的数据库连接池的使用中，不需要手动去调用返回连接的方法.
+        connection.close();
+
     }
 }

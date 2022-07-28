@@ -1,4 +1,4 @@
-package connectionpool;
+package connectionpool.myconnectionpool;
 
 import util.JDBCUtils;
 
