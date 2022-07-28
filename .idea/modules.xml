@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/02-connection-pool/02-connection-pool.iml" filepath="$PROJECT_DIR$/02-connection-pool/02-connection-pool.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc-demo/jdbc-demo.iml" filepath="$PROJECT_DIR$/jdbc-demo/jdbc-demo.iml" />
     </modules>
   </component>
