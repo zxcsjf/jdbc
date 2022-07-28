@@ -1,4 +1,4 @@
-package test;
+package homework;
 
 import connectionpool.opensourcedbcp.DBCPUtils;
 
@@ -8,12 +8,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * 用dbcp 查
+ * 用dbcp 增
  *
  * @author zxcsjf
  * @since 2022/07/28 21:55
  */
-public class DemoDBCPUtils {
+public class DemoDBCPUtils2 {
     public static void main(String[] args) throws SQLException {
 
         // 1.获取连接
@@ -22,19 +22,13 @@ public class DemoDBCPUtils {
         // 2.创建statement对象
         Statement statement = connection.createStatement();
 
-        // 3.发送sql语句，查
-        ResultSet resultSet = statement.executeQuery("select * from account");
+        // 3.发送sql语句,增
+        int affectedRows = statement.executeUpdate("insert into account values (1010, '单纪飞', 1800)");
 
         // 4.解析结果集
-        while (resultSet.next()) {
-            int id = resultSet.getInt("id");
-            String name = resultSet.getString("name");
-            int money = resultSet.getInt("money");
-            System.out.println("id:" + id + ", name:" + name  + ", money:" + money);
-        }
+        System.out.println("affectedRows = " + affectedRows);
 
         // 5.关闭资源
-        resultSet.close();
         statement.close();
 
         // 6.返回链接到连接池
